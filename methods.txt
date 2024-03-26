@@ -1,0 +1,41 @@
+private double sum(double a, double b) {
+		double c = a + b;
+		return c;
+	}
+
+	private double subtract(double a, double b) {
+		double c = a - b;
+		return c;
+	}
+
+	private double multiply(double a, double b) {
+		double c = a * b;
+		return c;
+	}
+
+	private double divide(double a, double b) {
+		double c = a / b;
+		return c;
+	}
+
+	@Override
+	public void afterTextChanged(Editable arg0) {
+	}
+
+	@Override
+	public void beforeTextChanged(CharSequence arg0, int arg1, int arg2, int arg3) {
+	}
+
+	@Override
+	public void onTextChanged(CharSequence s, int start, int before, int count) {
+
+		if (etResult.getText().length() == 0) {
+			if (btnAbs.isEnabled()) {
+				btnAbs.setEnabled(false);
+				btnCalculate.setEnabled(false);
+			}
+		} else if (!btnAbs.isEnabled()) {
+			btnAbs.setEnabled(true);
+			btnCalculate.setEnabled(true);
+		}
+	}
